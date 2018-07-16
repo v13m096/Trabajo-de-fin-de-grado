@@ -100,7 +100,7 @@ public class EnunciadoLlenandoPiscinas extends javax.swing.JFrame {
         getContentPane().add(jButtonENVIAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, 130, 40));
 
         jLabelTIEMPO.setBackground(new java.awt.Color(0, 153, 153));
-        jLabelTIEMPO.setText("Tiempo máximo: 1,000 s                             Memoria máxima: 4096 KiB");
+        jLabelTIEMPO.setText("Tiempo máximo: 1,000 s                             ");
         getContentPane().add(jLabelTIEMPO, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 660, -1));
 
         jLabelNOMBRE_EJERCICIO.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N

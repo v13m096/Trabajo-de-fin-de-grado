@@ -77,7 +77,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="10" y="300" width="970" height="160"/>
+          <AbsoluteConstraints x="10" y="300" width="970" height="250"/>
         </Constraint>
       </Constraints>
 
@@ -90,7 +90,7 @@
               <Font name="Arial" size="13" style="0"/>
             </Property>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="En esta fase se evalua el c&#xf3;digo del usuario mediante un sistema de pruebas y comparaci&#xf3;n de salidas, siendo las salidas posibles:&#xa;-Correcto: indica que ha pasado la correspondiente prueba.&#xa;-Tiempo limite excedido: el codigo proporcionado ha emitido una respuesta, pero ha sobrepasado el tiempo limite establecido.&#xa;-Bucle: el c&#xf3;digo transcurridos 10 segundos no ha emitido ninguna respuesta o si lo ha hecho, esta ha llegado demasiado tarde.&#xa;-Tu codigo no es correcto: esto indica que alguna de las pruebas ha fallado, por lo que se emite un veredicto final que indica que tu&#xa;codigo no es correcto.&#xa;-Enhorabuena, tu codigo es correcto: el c&#xf3;digo proporcionado ha pasado todas las pruebas en menos del tiempo establecido para esta.&#xa;Por lo que se considera que el c&#xf3;digo es correcto."/>
+            <Property name="text" type="java.lang.String" value="En esta fase se eval&#xfa;a el c&#xf3;digo del usuario mediante un sistema de pruebas y comparaci&#xf3;n de salidas, siendo las salidas posibles:&#xa;-Correcto: indica que ha pasado la correspondiente prueba.&#xa;-Tiempo limite excedido: el codigo proporcionado ha emitido una respuesta, pero ha sobrepasado el tiempo limite establecido.&#xa;-Bucle: el c&#xf3;digo transcurridos 10 segundos no ha emitido ninguna respuesta o si lo ha hecho, esta ha llegado demasiado tarde.&#xa;-Tu codigo no es correcto: esto indica que alguna de las pruebas ha fallado, por lo que se emite un veredicto final que indica que tu&#xa;codigo no es correcto.&#xa;-Enhorabuena, tu codigo es correcto: el c&#xf3;digo proporcionado ha pasado todas las pruebas en menos del tiempo establecido para esta.&#xa;Por lo que se considera que el c&#xf3;digo es correcto."/>
           </Properties>
         </Component>
       </SubComponents>

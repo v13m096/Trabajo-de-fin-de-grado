@@ -56,7 +56,7 @@ public class EjemplosLosProblemasDeSerRico extends javax.swing.JFrame {
         jTextArea5.setColumns(20);
         jTextArea5.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jTextArea5.setRows(5);
-        jTextArea5.setText("La entrada comienza con un número no negativo indicando el número de casos de prueba que vendrán a continuación. Por cada caso de prueba\nse proporcionará, en una única línea, la descripción del acuario con tres números: el número de compartimentos del acuario (>0), la capacidad \nen litros del más grande (>0), y la diferencia de litros entre dos compartimentos adyacentes (≥0). Ninguno de los tres números será mayor de \n10.000.\n\nPara cada caso de prueba de la entrada, el programa escribirá el número de litros de agua mineral que debieron comprarse para llenar el acuario.\n\nENTRADA DE EJEMPLO\n\n3\n5 300 10\n4 400 20\n3 500 30\n\nSALIDA DE EJEMPLO\n\n1400\n1480\n1410");
+        jTextArea5.setText("La entrada comienza con un número no negativo indicando el número de casos de prueba que vendrán a continuación. Por cada caso de prueba\nse proporcionará, en una única línea, la descripción del acuario con tres números: el número de compartimentos del acuario (>0), la capacidad \nen litros del más grande (>0), y la diferencia de litros entre dos compartimentos adyacentes (≥0). Ninguno de los tres números será mayor de \n10.000.\n\nPara cada caso de prueba de la entrada, el programa escribirá el número de litros de agua mineral que debieron comprarse para llenar el acuario.\n\nENTRADA DE EJEMPLO\n\n3 \n5 300 10 \n4 400 20 \n3 500 30 \n\nSALIDA DE EJEMPLO\n\n1400 \n1480 \n1410 ");
         jScrollPane1.setViewportView(jTextArea5);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 1000, 430));
@@ -115,7 +115,7 @@ public class EjemplosLosProblemasDeSerRico extends javax.swing.JFrame {
         getContentPane().add(jButtonENVIAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, 130, 40));
 
         jLabelTIEMPO.setBackground(new java.awt.Color(0, 153, 153));
-        jLabelTIEMPO.setText("Tiempo máximo: 8,000 s                             Memoria máxima: 4096 KiB");
+        jLabelTIEMPO.setText("Tiempo máximo: 8,000 s                             ");
         getContentPane().add(jLabelTIEMPO, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 80, 450, -1));
 
         jLabelNOMBRE_EJERCICIO.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N

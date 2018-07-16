@@ -54,7 +54,7 @@ public class CreditosLaTiendaDeLaEsquina extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelAutores.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabelAutores.setText("Autores");
+        jLabelAutores.setText("Información");
         getContentPane().add(jLabelAutores, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
 
         jButtonDOCUMENTACION.setBackground(new java.awt.Color(204, 204, 204));
@@ -127,7 +127,7 @@ public class CreditosLaTiendaDeLaEsquina extends javax.swing.JFrame {
         jTextArea2.setColumns(20);
         jTextArea2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextArea2.setRows(5);
-        jTextArea2.setText("Isabel Pita\nMarco Antonio Gómez Martín\nAlberto Verdejo\nPedro Pablo Gómez Martín");
+        jTextArea2.setText("Autor: Isabel Pita, Marco Antonio Gómez Martín, Alberto Verdejo y Pedro Pablo Gómez Martín.");
         jScrollPanelTEXTO.setViewportView(jTextArea2);
 
         getContentPane().add(jScrollPanelTEXTO, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 990, 140));

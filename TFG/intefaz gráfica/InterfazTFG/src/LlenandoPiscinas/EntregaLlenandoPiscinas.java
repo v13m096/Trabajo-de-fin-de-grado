@@ -39,9 +39,6 @@ public class EntregaLlenandoPiscinas extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabelAutores = new javax.swing.JLabel();
-        jCheckBoxWindows = new javax.swing.JCheckBox();
-        jCheckBoxUbuntu = new javax.swing.JCheckBox();
-        jLabelSO = new javax.swing.JLabel();
         jButtonDOCUMENTACION = new javax.swing.JButton();
         jButtonREALIZARENTREGA = new javax.swing.JButton();
         jButtonPATH = new javax.swing.JButton();
@@ -68,28 +65,6 @@ public class EntregaLlenandoPiscinas extends javax.swing.JFrame {
         jLabelAutores.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabelAutores.setText("Seleccione su codigo");
         getContentPane().add(jLabelAutores, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
-
-        jCheckBoxWindows.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jCheckBoxWindows.setText("Windows 10");
-        jCheckBoxWindows.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxWindowsActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jCheckBoxWindows, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 150, 160, -1));
-
-        jCheckBoxUbuntu.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jCheckBoxUbuntu.setText("Ubuntu");
-        jCheckBoxUbuntu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxUbuntuActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jCheckBoxUbuntu, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 150, 130, -1));
-
-        jLabelSO.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabelSO.setText("Seleccione su sistema operativo");
-        getContentPane().add(jLabelSO, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 500, 30));
 
         jButtonDOCUMENTACION.setBackground(new java.awt.Color(204, 204, 204));
         jButtonDOCUMENTACION.setForeground(new java.awt.Color(0, 153, 153));
@@ -170,7 +145,7 @@ public class EntregaLlenandoPiscinas extends javax.swing.JFrame {
         getContentPane().add(jButtonENVIAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, 130, 40));
 
         jLabelTIEMPO.setBackground(new java.awt.Color(0, 153, 153));
-        jLabelTIEMPO.setText("Tiempo máximo: 1,000 s                             Memoria máxima: 4096 KiB");
+        jLabelTIEMPO.setText("Tiempo máximo: 1,000 s                             ");
         getContentPane().add(jLabelTIEMPO, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 660, -1));
 
         jLabelNOMBRE_EJERCICIO.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -238,11 +213,11 @@ public class EntregaLlenandoPiscinas extends javax.swing.JFrame {
         String[] prueba2= {"1000000000 5 1 150000000 6 1","1000000000 5 3 150000000 6 5","1000000000 100 1 150000000 6 5","0 0 0 0 0 0"};
         String esperado2="VECINO 30000000 VECINO 149999995 YO 10101011 ";
         //Variables tercera prueba
-        String[] prueba3={"1000000000 5 1 150000000 6 1","1000000000 5 3 150000000 6 5","1000000000 100 1 150000000 6 5","10 5 1 15 6 1","50 5 1 50 5 0","50 5 1 50 5 6","0 0 0 0 0 0"};
-        String esperado3="VECINO 30000000 VECINO 149999995 YO 10101011 EMPATE 3 VECINO 10 YO 13 ";
+        String[] prueba3={"1000000000 5 1 150000000 6 1","1000000000 5 3 150000000 6 5","1000000000 100 1 150000000 6 5","10 5 1 15 6 1","50 5 1 50 5 0","50 5 1 50 5 6","1000000000 5 1 150000000 6 1","1000000000 5 3 150000000 6 5","1000000000 100 1 150000000 6 5","0 0 0 0 0 0"};
+        String esperado3="VECINO 30000000 VECINO 149999995 YO 10101011 EMPATE 3 VECINO 10 YO 13 VECINO 30000000 VECINO 149999995 YO 10101011 ";
         //Variables cuarta prueba
         String[] prueba4={"1000000000 0 1 150000000 6 1","1000000000 1 0 150000000 6 1","1000000000 1 0 150000000 0 1","1000000000 1 1 150000000 6 0","0 100 1 1 6 5","1 5 3 0 6 5"};;
-        String esperado4="VECINO 30000000 VECINO 30000000 YO 1000000000 VECINO 25000000  ";
+        
         //Variables quinta prueba
         String[] prueba5= {"1000000000 0 1 150000000 6 1","1000000000 1 0 150000000 6 1","1000000000 1 0 150000000 0 1","1000000000 1 1 150000000 6 0","1 5 3 0 6 5","200 100 1 1 6 5"};
         String esperadoW5="VECINO 30000000 VECINO 30000000 YO 1000000000 VECINO 25000000  ";
@@ -253,7 +228,8 @@ public class EntregaLlenandoPiscinas extends javax.swing.JFrame {
        
     // PRIMERO COMPROBAMOS QUE EL ALUMNO HAYA SELECCIONADO SU CODIGO    
         if(filename!=null){
-            if(windows){
+            String so=EjecutadorLB.SistemaOperativo(filename);
+            if("windows".equals(so)){
             
             jTextAreaRESULTADO.setText(null);
     // INSTANCIAMOS UN OBJETO DE LA CLASE EJECUTADOR PARA PODER TENER ACCESO A LOS METODOS QUE NECESITAREMOS PARA LAS REALIZAR LAS PRUEBAS        
@@ -300,7 +276,7 @@ public class EntregaLlenandoPiscinas extends javax.swing.JFrame {
             
         
             }
-            else if(ubuntu){
+            else if("ubuntu".equals(so)){
             
             jTextAreaRESULTADO.setText(null);
     // INSTANCIAMOS UN OBJETO DE LA CLASE EJECUTADOR PARA PODER TENER ACCESO A LOS METODOS QUE NECESITAREMOS PARA LAS REALIZAR LAS PRUEBAS        
@@ -349,7 +325,7 @@ public class EntregaLlenandoPiscinas extends javax.swing.JFrame {
             }
             else{
                 jTextAreaRESULTADO.append("----VEREDICTO FINAL----"+"\n");    
-                jTextAreaRESULTADO.append("Aun no has seleccionado ningun sistema operativo"+"\n"+"\n");
+                jTextAreaRESULTADO.append("Sistema operativo incompatible"+"\n"+"\n");
             }
             
             }
@@ -358,16 +334,6 @@ public class EntregaLlenandoPiscinas extends javax.swing.JFrame {
         jTextAreaRESULTADO.append("----VEREDICTO FINAL----"+"\n");    
         jTextAreaRESULTADO.append("Aun no has seleccionado ningun archivo"+"\n"+"\n");}
     }//GEN-LAST:event_jButtonREALIZARENTREGAActionPerformed
-
-    private void jCheckBoxUbuntuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxUbuntuActionPerformed
-        // TODO add your handling code here:
-        ubuntu=true;
-    }//GEN-LAST:event_jCheckBoxUbuntuActionPerformed
-
-    private void jCheckBoxWindowsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxWindowsActionPerformed
-        // TODO add your handling code here:
-        windows=true;
-    }//GEN-LAST:event_jCheckBoxWindowsActionPerformed
 
     private void jButtonDOCUMENTACIONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDOCUMENTACIONActionPerformed
         // TODO add your handling code here:
@@ -393,9 +359,9 @@ public class EntregaLlenandoPiscinas extends javax.swing.JFrame {
                     jTextAreaRESULTADO.append("Tu codigo no es correcto"+"\n"+"\n");
                     
                 }
-                else if (resultadoprueba.equals("Bucle")){
+                else if (resultadoprueba.equals("Bucle infinito")){
                     objeto.matarHijosWindows();
-                    jTextAreaRESULTADO.append("Bucle"+"\n"+"\n");
+                    jTextAreaRESULTADO.append("Bucle infinito"+"\n"+"\n");
                     jTextAreaRESULTADO.append("----VEREDICTO FINAL---"+"\n");
                     jTextAreaRESULTADO.append("Tu codigo no es correcto"+"\n"+"\n");
                     
@@ -427,8 +393,8 @@ public class EntregaLlenandoPiscinas extends javax.swing.JFrame {
                     jTextAreaRESULTADO.append("Tu codigo no es correcto"+"\n"+"\n");
                     
                 }
-                else if (resultadoprueba.equals("Bucle")){
-                    jTextAreaRESULTADO.append("Bucle"+"\n"+"\n");
+                else if (resultadoprueba.equals("Bucle infinito")){
+                    jTextAreaRESULTADO.append("Bucle infinito"+"\n"+"\n");
                     jTextAreaRESULTADO.append("----VEREDICTO FINAL---"+"\n");
                     jTextAreaRESULTADO.append("Tu codigo no es correcto"+"\n"+"\n");
                     
@@ -741,14 +707,11 @@ public class EntregaLlenandoPiscinas extends javax.swing.JFrame {
     private javax.swing.JButton jButtonPATH;
     private javax.swing.JButton jButtonPROBLEMAS;
     private javax.swing.JButton jButtonREALIZARENTREGA;
-    private javax.swing.JCheckBox jCheckBoxUbuntu;
-    private javax.swing.JCheckBox jCheckBoxWindows;
     private javax.swing.JLabel jLabelAutores;
     private javax.swing.JLabel jLabelENCABEZADO;
     private javax.swing.JLabel jLabelFONDO;
     private javax.swing.JLabel jLabelFONDO_IZQ;
     private javax.swing.JLabel jLabelNOMBRE_EJERCICIO;
-    private javax.swing.JLabel jLabelSO;
     private javax.swing.JLabel jLabelTIEMPO;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextAreaRESULTADO;

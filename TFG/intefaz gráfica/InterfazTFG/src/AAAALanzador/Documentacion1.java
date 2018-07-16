@@ -64,10 +64,10 @@ public class Documentacion1 extends javax.swing.JFrame {
         jTextArea5.setColumns(20);
         jTextArea5.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jTextArea5.setRows(5);
-        jTextArea5.setText("En esta fase se evalua el código del usuario mediante un sistema de pruebas y comparación de salidas, siendo las salidas posibles:\n-Correcto: indica que ha pasado la correspondiente prueba.\n-Tiempo limite excedido: el codigo proporcionado ha emitido una respuesta, pero ha sobrepasado el tiempo limite establecido.\n-Bucle: el código transcurridos 10 segundos no ha emitido ninguna respuesta o si lo ha hecho, esta ha llegado demasiado tarde.\n-Tu codigo no es correcto: esto indica que alguna de las pruebas ha fallado, por lo que se emite un veredicto final que indica que tu\ncodigo no es correcto.\n-Enhorabuena, tu codigo es correcto: el código proporcionado ha pasado todas las pruebas en menos del tiempo establecido para esta.\nPor lo que se considera que el código es correcto.");
+        jTextArea5.setText("En esta fase se evalúa el código del usuario mediante un sistema de pruebas y comparación de salidas, siendo las salidas posibles:\n-Correcto: indica que ha pasado la correspondiente prueba.\n-Tiempo limite excedido: el codigo proporcionado ha emitido una respuesta, pero ha sobrepasado el tiempo limite establecido.\n-Bucle: el código transcurridos 10 segundos no ha emitido ninguna respuesta o si lo ha hecho, esta ha llegado demasiado tarde.\n-Tu codigo no es correcto: esto indica que alguna de las pruebas ha fallado, por lo que se emite un veredicto final que indica que tu\ncodigo no es correcto.\n-Enhorabuena, tu codigo es correcto: el código proporcionado ha pasado todas las pruebas en menos del tiempo establecido para esta.\nPor lo que se considera que el código es correcto.");
         jScrollPane5.setViewportView(jTextArea5);
 
-        getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 970, 160));
+        getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 970, 250));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Prueba del código");

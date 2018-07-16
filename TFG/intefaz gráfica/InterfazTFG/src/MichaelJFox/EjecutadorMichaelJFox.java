@@ -1,13 +1,32 @@
 package MichaelJFox;
-import LosProblemasDeSerRico.*;
-import Cenicienta.*;
-import CodigosDeBarras.*;
 import java.io.*;
 import java.util.concurrent.TimeUnit;
 public class EjecutadorMichaelJFox {
 		public static String finresult = "";
                 
-                
+        public static String SistemaOperativo(String rutacompleta) {
+		String resultado="";
+
+		int longitud=rutacompleta.length()-1;
+		
+		while((int)rutacompleta.charAt(longitud)!=92&&longitud>=0){
+			longitud--;}
+                if(longitud>0){
+                    resultado="windows";
+                }
+                else{
+                    longitud=rutacompleta.length()-1;
+		
+                    while((int)rutacompleta.charAt(longitud)!=47&&longitud>=0){
+			longitud--;}
+                if(longitud>0){
+                    resultado="ubuntu";
+                }
+                else{
+                    resultado="Sistema operativo incompatible";}
+                }
+		return resultado;
+	}        
 	public static String[] DirectorioyNombredelprogramaWindows(String rutacompleta) {
 		String[] resultado=new String[2];
 
@@ -126,6 +145,7 @@ public class EjecutadorMichaelJFox {
 				{
 
 					contador++;
+                                        
 					if (contador>4&&contador<5+(prueba.length-1)/2){
 						resultado=resultado+outputRun+" ";}
 
@@ -142,7 +162,7 @@ public class EjecutadorMichaelJFox {
 
 
 			else {
-				resultado="Bucle";
+				resultado="Bucle infinito";
 				try {   
                                         processRun.destroy();
 				}
@@ -235,7 +255,7 @@ public class EjecutadorMichaelJFox {
 
 
 			else {
-				resultado="Bucle";
+				resultado="Bucle infinito";
 				processRun.destroyForcibly();
 			}
 

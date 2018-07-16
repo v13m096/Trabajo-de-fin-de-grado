@@ -104,7 +104,7 @@ public class EnunciadoCenicienta extends javax.swing.JFrame {
         getContentPane().add(jButtonENVIAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, 130, 40));
 
         jLabelTIEMPO.setBackground(new java.awt.Color(0, 153, 153));
-        jLabelTIEMPO.setText("Tiempo máximo: 1,000 s                             Memoria máxima: 4096 KiB");
+        jLabelTIEMPO.setText("Tiempo máximo: 1,000 s                             ");
         getContentPane().add(jLabelTIEMPO, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 80, 510, -1));
 
         jLabelNOMBRE_EJERCICIO.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -121,7 +121,7 @@ public class EnunciadoCenicienta extends javax.swing.JFrame {
         jTextArea2.setColumns(20);
         jTextArea2.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jTextArea2.setRows(5);
-        jTextArea2.setText("Cenicienta vive con su madrastra y sus dos hermanastras, que le hacen trabajar todo el día en las faenas de la casa. Hoy el Palacio Real ha \nanunciado que su Majestad el príncipe va a celebrar un baile para buscar esposa. Cenicienta quiere asistir al baile pero sus envidiosas hemanastras\nconvencen a su madrastra para que le mande muchas tareas y no pueda asistir. La madrastra le propone una serie de trabajos con la condición de \nque si los termina a tiempo la llevará al baile.\n\nCenicienta sabe el tiempo que tarda en realizar cada una de las tareas encomendadas, así que puede calcular si merece la pena trabajar o si de \ntodas formas no conseguirá llegar al baile.");
+        jTextArea2.setText("Cenicienta vive con su madrastra y sus dos hermanastras, que le hacen trabajar todo el día en las faenas de la casa. Hoy el Palacio Real ha \nanunciado que su Majestad el príncipe va a celebrar un baile para buscar esposa. Cenicienta quiere asistir al baile pero sus envidiosas hermanastras\nconvencen a su madrastra para que le mande muchas tareas y no pueda asistir. La madrastra le propone una serie de trabajos con la condición de \nque si los termina a tiempo la llevará al baile.\n\nCenicienta sabe el tiempo que tarda en realizar cada una de las tareas encomendadas, así que puede calcular si merece la pena trabajar o si de \ntodas formas no conseguirá llegar al baile.");
         jScrollPanelTEXTO.setViewportView(jTextArea2);
 
         getContentPane().add(jScrollPanelTEXTO, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 1000, 460));

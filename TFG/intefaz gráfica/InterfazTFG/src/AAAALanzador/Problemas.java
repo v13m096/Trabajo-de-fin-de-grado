@@ -8,9 +8,14 @@ package AAAALanzador;
 import Cenicienta.EnunciadoCenicienta;
 import LlenandoPiscinas.*;
 import CodigosDeBarras.*;
+
+
 import LaTiendaDeLaEsquina.*;
 import LosProblemasDeSerRico.EnunciadoLosProblemasDeSerRico;
 import MichaelJFox.EnunciadoMichaelJFox;
+import PîxelArt.EnunciadoPixelArt;
+import QuintoMilenio.EnunciadoQuintoMilenio;
+import Sudokus.EnunciadoSudokus;
 /**
  *
  * @author maxxi
@@ -33,7 +38,10 @@ public class Problemas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButtonSudokus = new javax.swing.JButton();
+        jButtonPixelArt = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jButtonQuintoMilenio = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButtonLlenandoPiscinas = new javax.swing.JButton();
@@ -55,9 +63,33 @@ public class Problemas extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1030, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButtonSudokus.setText("Sudokus correctos");
+        jButtonSudokus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSudokusActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonSudokus, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, 180, 30));
+
+        jButtonPixelArt.setText("Pixel art");
+        jButtonPixelArt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPixelArtActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonPixelArt, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 320, 160, 30));
+
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Bucles");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, -1, -1));
+
+        jButtonQuintoMilenio.setText("Quinto milenio");
+        jButtonQuintoMilenio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonQuintoMilenioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonQuintoMilenio, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 460, 160, 30));
 
         jButton2.setText("Michael J. Fox y el Pato Donald");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -73,7 +105,7 @@ public class Problemas extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 160, 220, 30));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, 220, 30));
 
         jButtonLlenandoPiscinas.setText("Llenando piscinas");
         jButtonLlenandoPiscinas.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +129,7 @@ public class Problemas extends javax.swing.JFrame {
                 jButtoncenicientaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtoncenicienta, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, 190, 30));
+        getContentPane().add(jButtoncenicienta, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 190, 30));
 
         jButtonCodigosDeBarras.setText("Códigos de barras");
         jButtonCodigosDeBarras.addActionListener(new java.awt.event.ActionListener() {
@@ -215,6 +247,27 @@ public class Problemas extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButtonQuintoMilenioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonQuintoMilenioActionPerformed
+        // TODO add your handling code here:
+        EnunciadoQuintoMilenio a= new EnunciadoQuintoMilenio();
+        a.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonQuintoMilenioActionPerformed
+
+    private void jButtonPixelArtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPixelArtActionPerformed
+        // TODO add your handling code here:
+        EnunciadoPixelArt a= new EnunciadoPixelArt();
+        a.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonPixelArtActionPerformed
+
+    private void jButtonSudokusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSudokusActionPerformed
+        // TODO add your handling code here:
+        EnunciadoSudokus a= new EnunciadoSudokus();
+        a.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonSudokusActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -321,6 +374,9 @@ public class Problemas extends javax.swing.JFrame {
     private javax.swing.JButton jButtonLlenandoPiscinas;
     private javax.swing.JButton jButtonLlenandoPiscinas1;
     private javax.swing.JButton jButtonPROBLEMAS;
+    private javax.swing.JButton jButtonPixelArt;
+    private javax.swing.JButton jButtonQuintoMilenio;
+    private javax.swing.JButton jButtonSudokus;
     private javax.swing.JButton jButtoncenicienta;
     private javax.swing.JButton jButtontiendaesquina;
     private javax.swing.JLabel jLabel1;

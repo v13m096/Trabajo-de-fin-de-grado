@@ -39,7 +39,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Autores"/>
+        <Property name="text" type="java.lang.String" value="Informaci&#xf3;n"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -145,7 +145,7 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Tiempo m&#xe1;ximo: 1,000 s                             Memoria m&#xe1;xima: 4096 KiB"/>
+        <Property name="text" type="java.lang.String" value="Tiempo m&#xe1;ximo: 1,000 s                             "/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -209,7 +209,7 @@
               <Font name="Tahoma" size="14" style="0"/>
             </Property>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="Marco Antonio G&#xf3;mez Mart&#xed;n &#xa;Patricia D&#xed;az Garc&#xed;a&#xa;Pedro Pablo G&#xf3;mez Mart&#xed;n.&#xa;Catalina Molano Alvarado."/>
+            <Property name="text" type="java.lang.String" value="Autores: Marco Antonio G&#xf3;mez Mart&#xed;n, Patricia D&#xed;az Garc&#xed;a y Pedro Pablo G&#xf3;mez Mart&#xed;n.&#xa;Revisor: Catalina Molano Alvarado."/>
           </Properties>
         </Component>
       </SubComponents>
@@ -217,7 +217,7 @@
     <Component class="javax.swing.JLabel" name="jLabelFONDO">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="1010" height="890"/>
+          <AbsoluteConstraints x="-30" y="10" width="1010" height="890"/>
         </Constraint>
       </Constraints>
     </Component>

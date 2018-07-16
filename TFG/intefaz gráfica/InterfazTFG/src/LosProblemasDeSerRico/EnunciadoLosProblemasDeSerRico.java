@@ -102,7 +102,7 @@ public class EnunciadoLosProblemasDeSerRico extends javax.swing.JFrame {
         getContentPane().add(jButtonENVIAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, 130, 40));
 
         jLabelTIEMPO.setBackground(new java.awt.Color(0, 153, 153));
-        jLabelTIEMPO.setText("Tiempo máximo: 8,000 s                             Memoria máxima: 4096 KiB");
+        jLabelTIEMPO.setText("Tiempo máximo: 8,000 s                            ");
         getContentPane().add(jLabelTIEMPO, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 80, 480, -1));
 
         jLabelNOMBRE_EJERCICIO.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -119,7 +119,7 @@ public class EnunciadoLosProblemasDeSerRico extends javax.swing.JFrame {
         jTextArea2.setColumns(20);
         jTextArea2.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jTextArea2.setRows(5);
-        jTextArea2.setText("El abuelo de Quique es el dueño de una tienda en la esquina de mi calle. Este verano ha pedido a su nieto que le ayude encargándose de cobrar.\nAunque no acostumbra a pasearse por las cocinas, tiene sirvientes para eso, una noche de insomnio el magnate Rick Achón sintió algo de \nhambre y decidió darse una vuelta y buscar algo de comer, con la esperanza de que el paseo le sirviera además para que por fin Morfeo \nacudiera a su encuentro.\n\nCuando entró en la despensa le entró cierto desasosiego; había viandas por todos sitios, jamones, chorizos, marisco, legumbres, … pero no \nhabía nada que se pudiera considerar vivo.\n\nPor si sufría más noches de insomnio, al día siguiente se propuso poner solución a este problema y no reparó en gastos al comprarse \nun gigantesco acuario.\n\nEl acuario tenía varios compartimentos escalonados, cada uno menor que el anterior. Tras su instalación, los sirvientes tuvieron que encargarse \nde su llenado. Y esto no resultó ser una tarea sencilla porque el magnate quería que sus nuevos peces vivieran en agua mineral, por lo que tuvieron \nque averiguar la capacidad del acuario para saber cuántos litros de agua comprar");
+        jTextArea2.setText("El abuelo de Quique es el dueño de una tienda en la esquina de mi calle. Este verano ha pedido a su nieto que le ayude encargándose de cobrar.\nAunque no acostumbra a pasearse por las cocinas, tiene sirvientes para eso, una noche de insomnio el magnate Rick Achón sintió algo de \nhambre y decidió darse una vuelta y buscar algo de comer, con la esperanza de que el paseo le sirviera además para que por fin Morfeo \nacudiera a su encuentro.\n\nCuando entró en la despensa le entró cierto desasosiego; había viandas por todos sitios, jamones, chorizos, marisco, legumbres, … pero no \nhabía nada que se pudiera considerar vivo.\n\nPor si sufría más noches de insomnio, al día siguiente se propuso poner solución a este problema y no reparó en gastos al comprarse \nun gigantesco acuario.\n\nEl acuario tenía varios compartimentos escalonados, cada uno menor que el anterior. Tras su instalación, los sirvientes tuvieron que encargarse \nde su llenado. Y esto no resultó ser una tarea sencilla porque el magnate quería que sus nuevos peces vivieran en agua mineral, por lo que tuvieron \nque averiguar la capacidad del acuario para saber cuántos litros de agua comprar.");
         jScrollPanelTEXTO.setViewportView(jTextArea2);
 
         getContentPane().add(jScrollPanelTEXTO, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 1000, 440));

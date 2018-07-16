@@ -112,7 +112,7 @@ public class CreditosLosProblemasDeSerRico extends javax.swing.JFrame {
         getContentPane().add(jButtonENVIAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, 130, 40));
 
         jLabelTIEMPO.setBackground(new java.awt.Color(0, 153, 153));
-        jLabelTIEMPO.setText("Tiempo máximo: 8,000 s                             Memoria máxima: 4096 KiB");
+        jLabelTIEMPO.setText("Tiempo máximo: 8,000 s                             ");
         getContentPane().add(jLabelTIEMPO, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 80, 470, -1));
 
         jLabelNOMBRE_EJERCICIO.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -128,7 +128,7 @@ public class CreditosLosProblemasDeSerRico extends javax.swing.JFrame {
         jTextArea2.setColumns(20);
         jTextArea2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextArea2.setRows(5);
-        jTextArea2.setText("Pedro Pablo Gómez Martín \nMarco Antonio Gómez Martín\nPatricia Díaz García\nFerran Borrell Micola\nCristina Gómez Alonso");
+        jTextArea2.setText("Autores: Pedro Pablo Gómez Martín, Marco Antonio Gómez Martín y Patricia Díaz García.\nRevisores: Ferran Borrell Micola y Cristina Gómez Alonso.");
         jScrollPanelTEXTO.setViewportView(jTextArea2);
 
         getContentPane().add(jScrollPanelTEXTO, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 990, 140));

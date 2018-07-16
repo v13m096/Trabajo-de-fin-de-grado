@@ -1,10 +1,31 @@
 package Cenicienta;
-import CodigosDeBarras.*;
 import java.io.*;
 import java.util.concurrent.TimeUnit;
 public class EjecutadorCenicienta {
 		public static String finresult = "";
-                
+        public static String SistemaOperativo(String rutacompleta) {
+		String resultado="";
+
+		int longitud=rutacompleta.length()-1;
+		
+		while((int)rutacompleta.charAt(longitud)!=92&&longitud>=0){
+			longitud--;}
+                if(longitud>0){
+                    resultado="windows";
+                }
+                else{
+                    longitud=rutacompleta.length()-1;
+		
+                    while((int)rutacompleta.charAt(longitud)!=47&&longitud>=0){
+			longitud--;}
+                if(longitud>0){
+                    resultado="ubuntu";
+                }
+                else{
+                    resultado="Sistema operativo incompatible";}
+                }
+		return resultado;
+	}    
                 
 	public static String[] DirectorioyNombredelprogramaWindows(String rutacompleta) {
 		String[] resultado=new String[2];
@@ -79,7 +100,7 @@ public class EjecutadorCenicienta {
 
 
 
-	public static String runFileWindows(String ruta,String[] prueba,int casos,int timeout)
+	public static String runFileWindows(String ruta,String[] prueba,int timeout)
 	{
 		String[] pathandnameclass=DirectorioyNombredelprogramaWindows(ruta);
 		String resultado="";
@@ -117,19 +138,12 @@ public class EjecutadorCenicienta {
 				BufferedReader brResult = new BufferedReader(new InputStreamReader(processRun.getInputStream()));
 				String outputRun;
 				int contador=0;
-
-
-
-				while( (outputRun = brResult.readLine())!=null)
+                                while( (outputRun = brResult.readLine())!=null)
 				{
-
-					contador++;
-					if (contador>4&&contador<5+casos){
-						resultado=resultado+outputRun+" ";}
-
-					//}
-
-				}
+                                    contador++;
+				    if (contador>4&&contador<5+((prueba.length-1)/2)){
+					resultado=resultado+outputRun+" ";}
+                                }
 				brResult.close();
 			}
                         else if(processRun.waitFor(10000, TimeUnit.MILLISECONDS)) {

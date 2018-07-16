@@ -5,7 +5,7 @@
  */
 package Cenicienta;
 
-import CodigosDeBarras.*;
+
 import AAAALanzador.Documentacion;
 import static Cenicienta.EntregaCenicienta.filename;
 import AAAALanzador.Problemas;
@@ -20,6 +20,7 @@ public class EntregaCenicienta extends javax.swing.JFrame {
 
     public static String filename;
     public static  int activo=0;
+    
     public static boolean ubuntu=false;
     public static boolean windows=false;
     
@@ -39,9 +40,6 @@ public class EntregaCenicienta extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabelAutores = new javax.swing.JLabel();
-        jCheckBoxWindows = new javax.swing.JCheckBox();
-        jCheckBoxUbuntu = new javax.swing.JCheckBox();
-        jLabelSO = new javax.swing.JLabel();
         jButtonDOCUMENTACION = new javax.swing.JButton();
         jButtonREALIZARENTREGA = new javax.swing.JButton();
         jButtonPATH = new javax.swing.JButton();
@@ -68,28 +66,6 @@ public class EntregaCenicienta extends javax.swing.JFrame {
         jLabelAutores.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabelAutores.setText("Seleccione su codigo");
         getContentPane().add(jLabelAutores, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
-
-        jCheckBoxWindows.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jCheckBoxWindows.setText("Windows 10");
-        jCheckBoxWindows.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxWindowsActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jCheckBoxWindows, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 150, 160, -1));
-
-        jCheckBoxUbuntu.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jCheckBoxUbuntu.setText("Ubuntu");
-        jCheckBoxUbuntu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxUbuntuActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jCheckBoxUbuntu, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, 130, -1));
-
-        jLabelSO.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabelSO.setText("Seleccione su sistema operativo");
-        getContentPane().add(jLabelSO, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 500, 30));
 
         jButtonDOCUMENTACION.setBackground(new java.awt.Color(204, 204, 204));
         jButtonDOCUMENTACION.setForeground(new java.awt.Color(0, 153, 153));
@@ -170,7 +146,7 @@ public class EntregaCenicienta extends javax.swing.JFrame {
         getContentPane().add(jButtonENVIAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, 130, 40));
 
         jLabelTIEMPO.setBackground(new java.awt.Color(0, 153, 153));
-        jLabelTIEMPO.setText("Tiempo máximo: 1,000 s                             Memoria máxima: 4096 KiB");
+        jLabelTIEMPO.setText("Tiempo máximo: 1,000 s                            ");
         getContentPane().add(jLabelTIEMPO, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 80, 450, -1));
 
         jLabelNOMBRE_EJERCICIO.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -241,11 +217,11 @@ public class EntregaCenicienta extends javax.swing.JFrame {
         String[] prueba3={"1","25:05:40:00","01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10"};
         String esperado3="SI ";
         //Variables cuarta prueba
-        String[] prueba4={"5","00:05:40:00","01:30:00 00:45:20 03:20:50 00:00:00 00:15:54","01:02:00:00","08:05:40 05:00:10 07:55:00 05:10:06 00:00:00","02:02:00:00","08:05:40 05:00:10 07:55:00 05:10:06 00:00:00","02:02:00:00","08:05:40 05:00:10 07:55:00 05:10:06 00:00:00 12:12:12 15:14:35 22:15:49 20:01:16","01:02:00:00","04:05:40 02:00:10 07:00:00 05:10:06 00:00:00 00:59:59 00:15:44 00:28:48 01:15:15"};
-        String esperado4="NO NO SI NO SI ";
+        String[] prueba4={"7","00:05:40:00","01:30:00 00:45:20 03:20:50 00:00:00 00:15:54","01:02:00:00","08:05:40 05:00:10 07:55:00 05:10:06 00:00:00","02:02:00:00","08:05:40 05:00:10 07:55:00 05:10:06 00:00:00","02:02:00:00","08:05:40 05:00:10 07:55:00 05:10:06 00:00:00 12:12:12 15:14:35 22:15:49 20:01:16","01:02:00:00","04:05:40 02:00:10 07:00:00 05:10:06 00:00:00 00:59:59 00:15:44 00:28:48 01:15:15","05:05:40:00","01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10","25:05:40:00","01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10 01:30:00 00:45:20 03:20:50 00:00:00 01:15:23 02:14:02 23:15:02 05:59:59 05:16:17 16:15:10"};
+        String esperado4="NO NO SI NO SI NO SI ";
         //Variables quinta prueba
         String[] prueba5= {"2","00:05:40:00","01:30:00 00:45:20 03:20:50 00:00:00","01:02:00:00","08:05:40 05:00:10 07:55:00 05:10:06 00:00:00","00:05:40:00","01:30:00 00:45:20 03:20:50 00:00:00"};
-        String esperadoW5="SI NO ";
+        String esperadoW5="SI NO  ";
         String esperadoU5="SI NO ";
         //String esperado2="SI EEUU SI Bulgaria SI Inglaterra SI Irlanda SI Portugal SI Noruega SI Venezuela SI Cuba SI India cipote";
         
@@ -253,42 +229,44 @@ public class EntregaCenicienta extends javax.swing.JFrame {
        
     // PRIMERO COMPROBAMOS QUE EL ALUMNO HAYA SELECCIONADO SU CODIGO    
         if(filename!=null){
-            if(windows){
+            String so=EjecutadorCenicienta.SistemaOperativo(filename);
+            if("windows".equals(so)){
             
             jTextAreaRESULTADO.setText(null);
     // INSTANCIAMOS UN OBJETO DE LA CLASE EJECUTADOR PARA PODER TENER ACCESO A LOS METODOS QUE NECESITAREMOS PARA LAS REALIZAR LAS PRUEBAS        
-            EjecutadorCB objeto= new EjecutadorCB();
+           
+            
     // COMPROBAMOS QUE EL CODIGO DEL ALUMNO PUEDA COMPILARSE CORRECTAMENTE        
             
-            String compilacion=objeto.compilador(filename);
+            String compilacion=EjecutadorCenicienta.compilador(filename);
             jTextAreaRESULTADO.append("----PRUEBA DE CORRECTA COMPILACION DEL CODIGO---"+"\n");
             jTextAreaRESULTADO.append(compilacion+"\n"+"\n");
             
             
-            if(compilacion=="Correcto"){
-                String resultadoprueba="";
+            if("Correcto".equals(compilacion)){
+                 
     //PRIMERA PRUEBA
                 jTextAreaRESULTADO.append("----PRUEBA CON EL CASO DESCRITO EN EL ENUNCIADO---"+"\n");
-                resultadoprueba=RobotWindows(filename,prueba1,2,esperado1,1000);
+                String resultadoprueba=RobotWindows(filename,prueba1,esperado1,1000);
     //SI SUPERA LA PRUEBA, SEGUIMOS REALIZANDO PRUEBAS. EN CASO CONTRARIO NO HACE FALTA SEGUIR, EL CODIGO DEL ALUMNO YA ESTA MAL.          
                 if(resultadoprueba.equals("Correcto")){
     
     //SEGUNDA PRUEBA
                     
                     jTextAreaRESULTADO.append("----PRUEBA CON UN CASO NEGATIVO Y 100 TAREAS---"+"\n");
-                    resultadoprueba=RobotWindows(filename,prueba2,1,esperado2,1000);
+                    resultadoprueba=RobotWindows(filename,prueba2,esperado2,1000);
                     if(resultadoprueba.equals("Correcto")){
     //TERCERA PRUEBA
                         jTextAreaRESULTADO.append("----PRUEBA CON UN CASO POSITIVO Y 100 TAREAS---"+"\n");
-                        resultadoprueba=RobotWindows(filename,prueba3,1,esperado3,1000);
+                        resultadoprueba=RobotWindows(filename,prueba3,esperado3,1000);
                         if(resultadoprueba.equals("Correcto")){
     //CUARTA PRUEBA                        
-                          jTextAreaRESULTADO.append("----PRUEBA CON 5 CASOS Y UN NUMERO DE TAREAS RANDOM---"+"\n");
-                          resultadoprueba=RobotWindows(filename,prueba4,5,esperado4,1000);
+                          jTextAreaRESULTADO.append("----PRUEBA CON 7 CASOS Y UN NUMERO DE TAREAS RANDOM---"+"\n");
+                          resultadoprueba=RobotWindows(filename,prueba4,esperado4,1000);
                            if(resultadoprueba.equals("Correcto")){
     //QUINTA PRUEBA            
                                 jTextAreaRESULTADO.append("----PRUEBA DE TERMINACION SEGUN INDICIA EL ENUNCIADO---"+"\n");
-                                resultadoprueba=RobotWindows(filename,prueba5,2,esperadoW5,1000);
+                                resultadoprueba=RobotWindows(filename,prueba5,esperadoW5,1000);
                                 if(resultadoprueba.equals("Correcto")){
                                     jTextAreaRESULTADO.append("----VEREDICTO FINAL----"+"\n");
                                     jTextAreaRESULTADO.append("Enhorabuena, tu codigo es correcto"+"\n"+"\n");}
@@ -300,23 +278,23 @@ public class EntregaCenicienta extends javax.swing.JFrame {
             
         
             }
-            else if(ubuntu){
+            else if("ubuntu".equals(so)){
             
             jTextAreaRESULTADO.setText(null);
     // INSTANCIAMOS UN OBJETO DE LA CLASE EJECUTADOR PARA PODER TENER ACCESO A LOS METODOS QUE NECESITAREMOS PARA LAS REALIZAR LAS PRUEBAS        
-            EjecutadorCB objeto= new EjecutadorCB();
+        
     // COMPROBAMOS QUE EL CODIGO DEL ALUMNO PUEDA COMPILARSE CORRECTAMENTE        
             
-            String compilacion=objeto.compilador(filename);
+            String compilacion=EjecutadorCenicienta.compilador(filename);
             jTextAreaRESULTADO.append("----PRUEBA DE CORRECTA COMPILACION DEL CODIGO---"+"\n");
             jTextAreaRESULTADO.append(compilacion+"\n"+"\n");
             
             
-            if(compilacion=="Correcto"){
-                String resultadoprueba="";
+            if("Correcto".equals(compilacion)){
+                 
     //PRIMERA PRUEBA
                 jTextAreaRESULTADO.append("----PRUEBA CON EL CASO DESCRITO EN EL ENUNCIADO---"+"\n");
-                resultadoprueba=RobotUbuntu(filename,prueba1,esperado1,1000);
+                String resultadoprueba=RobotUbuntu(filename,prueba1,esperado1,1000);
     //SI SUPERA LA PRUEBA, SEGUIMOS REALIZANDO PRUEBAS. EN CASO CONTRARIO NO HACE FALTA SEGUIR, EL CODIGO DEL ALUMNO YA ESTA MAL.          
                 if(resultadoprueba.equals("Correcto")){
     
@@ -330,7 +308,7 @@ public class EntregaCenicienta extends javax.swing.JFrame {
                         resultadoprueba=RobotUbuntu(filename,prueba3,esperado3,1000);
                         if(resultadoprueba.equals("Correcto")){
     //CUARTA PRUEBA                        
-                          jTextAreaRESULTADO.append("----PRUEBA CON 5 CASOS Y UN NUMERO DE TAREAS RANDOM---"+"\n");
+                          jTextAreaRESULTADO.append("----PRUEBA CON 7 CASOS Y UN NUMERO DE TAREAS RANDOM---"+"\n");
                           resultadoprueba=RobotUbuntu(filename,prueba4,esperado4,1000);
                            if(resultadoprueba.equals("Correcto")){
     //QUINTA PRUEBA            
@@ -349,7 +327,7 @@ public class EntregaCenicienta extends javax.swing.JFrame {
             }
             else{
                 jTextAreaRESULTADO.append("----VEREDICTO FINAL----"+"\n");    
-                jTextAreaRESULTADO.append("Aun no has seleccionado ningun sistema operativo"+"\n"+"\n");
+                jTextAreaRESULTADO.append("Sistema operativo incompatible"+"\n"+"\n");
             }
             
             }
@@ -359,27 +337,17 @@ public class EntregaCenicienta extends javax.swing.JFrame {
         jTextAreaRESULTADO.append("Aun no has seleccionado ningun archivo"+"\n"+"\n");}
     }//GEN-LAST:event_jButtonREALIZARENTREGAActionPerformed
 
-    private void jCheckBoxUbuntuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxUbuntuActionPerformed
-        // TODO add your handling code here:
-        ubuntu=true;
-    }//GEN-LAST:event_jCheckBoxUbuntuActionPerformed
-
-    private void jCheckBoxWindowsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxWindowsActionPerformed
-        // TODO add your handling code here:
-        windows=true;
-    }//GEN-LAST:event_jCheckBoxWindowsActionPerformed
-
     private void jButtonDOCUMENTACIONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDOCUMENTACIONActionPerformed
         // TODO add your handling code here:
         Documentacion a= new Documentacion();
         a.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonDOCUMENTACIONActionPerformed
-    private String RobotWindows(String ruta,String[] prueba,int casos,String esperado, int time){
+    private String RobotWindows(String ruta,String[] prueba,String esperado, int time){
         String resultado="error";
-        String resultadoprueba="";
         EjecutadorCenicienta objeto= new EjecutadorCenicienta();
-        resultadoprueba=objeto.runFileWindows(ruta,prueba,casos,time);
+        
+        String resultadoprueba=EjecutadorCenicienta.runFileWindows(ruta,prueba,time);
                 
                 if(resultadoprueba.equals(esperado)){  
                   jTextAreaRESULTADO.append("Correcto"+"\n"+"\n");
@@ -387,14 +355,14 @@ public class EntregaCenicienta extends javax.swing.JFrame {
     
                }
                 else if (resultadoprueba.equals("Tiempo limite excedido")){
-                    objeto.matarHijosWindows();
+                    EjecutadorCenicienta.matarHijosWindows();
                     jTextAreaRESULTADO.append("Tiempo limite excedido"+"\n"+"\n");
                     jTextAreaRESULTADO.append("----VEREDICTO FINAL---"+"\n");
                     jTextAreaRESULTADO.append("Tu codigo no es correcto"+"\n"+"\n");
                     
                 }
                 else if (resultadoprueba.equals("Bucle")){
-                    objeto.matarHijosWindows();
+                    EjecutadorCenicienta.matarHijosWindows();
                     
                     jTextAreaRESULTADO.append("Bucle"+"\n"+"\n");
                     jTextAreaRESULTADO.append("----VEREDICTO FINAL---"+"\n");
@@ -412,9 +380,9 @@ public class EntregaCenicienta extends javax.swing.JFrame {
     }
     private String RobotUbuntu(String ruta,String[] prueba,String esperado, int time){
         String resultado="error";
-        String resultadoprueba="";
-        EjecutadorCB objeto= new EjecutadorCB();
-        resultadoprueba=objeto.runFileUbuntu(ruta,prueba,time);
+        
+        EjecutadorCenicienta objeto= new EjecutadorCenicienta();
+        String resultadoprueba=EjecutadorCenicienta.runFileUbuntu(ruta,prueba,time);
                 
                 if(resultadoprueba.equals(esperado)){  
                   jTextAreaRESULTADO.append("Correcto"+"\n"+"\n");
@@ -460,277 +428,13 @@ public class EntregaCenicienta extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EntregaCenicienta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EntregaCenicienta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EntregaCenicienta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(EntregaCenicienta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
+        
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new EntregaCenicienta().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new EntregaCenicienta().setVisible(true);
         });
     }
 
@@ -743,14 +447,11 @@ public class EntregaCenicienta extends javax.swing.JFrame {
     private javax.swing.JButton jButtonPATH;
     private javax.swing.JButton jButtonPROBLEMAS;
     private javax.swing.JButton jButtonREALIZARENTREGA;
-    private javax.swing.JCheckBox jCheckBoxUbuntu;
-    private javax.swing.JCheckBox jCheckBoxWindows;
     private javax.swing.JLabel jLabelAutores;
     private javax.swing.JLabel jLabelENCABEZADO;
     private javax.swing.JLabel jLabelFONDO;
     private javax.swing.JLabel jLabelFONDO_IZQ;
     private javax.swing.JLabel jLabelNOMBRE_EJERCICIO;
-    private javax.swing.JLabel jLabelSO;
     private javax.swing.JLabel jLabelTIEMPO;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextAreaRESULTADO;

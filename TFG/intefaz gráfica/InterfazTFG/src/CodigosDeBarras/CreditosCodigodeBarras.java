@@ -52,7 +52,7 @@ public class CreditosCodigodeBarras extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelAutores.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabelAutores.setText("Autores");
+        jLabelAutores.setText("Información");
         getContentPane().add(jLabelAutores, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
 
         jButtonDOCUMENTACION.setBackground(new java.awt.Color(204, 204, 204));
@@ -109,7 +109,7 @@ public class CreditosCodigodeBarras extends javax.swing.JFrame {
         getContentPane().add(jButtonENVIAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, 130, 40));
 
         jLabelTIEMPO.setBackground(new java.awt.Color(0, 153, 153));
-        jLabelTIEMPO.setText("Tiempo máximo: 1,000 s                             Memoria máxima: 4096 KiB");
+        jLabelTIEMPO.setText("Tiempo máximo: 1,000 s                             ");
         getContentPane().add(jLabelTIEMPO, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 660, -1));
 
         jLabelNOMBRE_EJERCICIO.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -125,7 +125,7 @@ public class CreditosCodigodeBarras extends javax.swing.JFrame {
         jTextArea2.setColumns(20);
         jTextArea2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextArea2.setRows(5);
-        jTextArea2.setText("Pedro Pablo Gómez Martín\nMarco Antonio Gómez Martín\nPatricia Díaz García.\n");
+        jTextArea2.setText("Autores: Pedro Pablo Gómez Martín, Marco Antonio Gómez Martín y Patricia Díaz García.");
         jScrollPanelTEXTO.setViewportView(jTextArea2);
 
         getContentPane().add(jScrollPanelTEXTO, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 990, 140));

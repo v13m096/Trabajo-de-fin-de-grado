@@ -4,7 +4,29 @@ import java.util.concurrent.TimeUnit;
 public class EjecutadorCB {
 		public static String finresult = "";
                 
-                
+        public static String SistemaOperativo(String rutacompleta) {
+		String resultado="";
+
+		int longitud=rutacompleta.length()-1;
+		
+		while((int)rutacompleta.charAt(longitud)!=92&&longitud>=0){
+			longitud--;}
+                if(longitud>0){
+                    resultado="windows";
+                }
+                else{
+                    longitud=rutacompleta.length()-1;
+		
+                    while((int)rutacompleta.charAt(longitud)!=47&&longitud>=0){
+			longitud--;}
+                if(longitud>0){
+                    resultado="ubuntu";
+                }
+                else{
+                    resultado="Sistema operativo incompatible";}
+                }
+		return resultado;
+	}        
 	public static String[] DirectorioyNombredelprogramaWindows(String rutacompleta) {
 		String[] resultado=new String[2];
 
@@ -116,19 +138,12 @@ public class EjecutadorCB {
 				BufferedReader brResult = new BufferedReader(new InputStreamReader(processRun.getInputStream()));
 				String outputRun;
 				int contador=0;
-
-
-
-				while( (outputRun = brResult.readLine())!=null)
+                                while( (outputRun = brResult.readLine())!=null)
 				{
-
-					contador++;
-					if (contador>4&&contador<prueba.length+4){
-						resultado=resultado+outputRun+" ";}
-
-					//}
-
-				}
+                                    contador++;
+				    if (contador>4&&contador<prueba.length+4){
+					resultado=resultado+outputRun+" ";}
+                                }
 				brResult.close();
 			}
                         else if(processRun.waitFor(10000, TimeUnit.MILLISECONDS)) {
@@ -139,7 +154,7 @@ public class EjecutadorCB {
 
 
 			else {
-				resultado="Bucle";
+				resultado="Bucle infinito";
 				try {   
                                         processRun.destroy();
 				}
@@ -232,7 +247,7 @@ public class EjecutadorCB {
 
 
 			else {
-				resultado="Bucle";
+				resultado="Bucle infinito";
 				processRun.destroyForcibly();
 			}
 

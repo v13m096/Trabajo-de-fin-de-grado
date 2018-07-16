@@ -79,7 +79,7 @@
               <Font name="Arial" size="13" style="0"/>
             </Property>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="El programa se ha dise&#xf1;ado para que funcione en m&#xe1;s de un sistema operativo para facilitar su acceso a m&#xe1;s personas. Los sistemas&#xa;operativos compatibles 100%,  una vez tengan instalados las versiones de java necesarias, son: Ubuntu 16.04 y Windows 10. El problema&#xa;reside en que la funci&#xf3;n que realiza las pruebas no es igual en ambos sistemas, de ah&#xed; que el usuario deba elegir un sistema operativo antes&#xa;de poder comprobar si su c&#xf3;digo es correcto. Si el usuario no ha seleccionado ninguno, saltar&#xe1; el siguiente mensaje: &quot;Aun no has seleccionado &#xa;ningun sistema operativo&quot;.&#xa;Este mensaje impide continuar hasta que no se seleccione un sistema operativo."/>
+            <Property name="text" type="java.lang.String" value="El programa se ha dise&#xf1;ado para que funcione en m&#xe1;s de un sistema operativo para facilitar su acceso a m&#xe1;s personas. Los sistemas&#xa;operativos compatibles 100%,  una vez tengan instalados las versiones de java necesarias, son: Ubuntu 16.04 y Windows 10. El problema&#xa;reside en que la funci&#xf3;n que realiza las pruebas no es igual en ambos sistemas. La detecci&#xf3;n del sistema operativo se realiza con una&#xa;prueba muy sencilla que precisa del paso anterior. Si el sistema operativo no corresponde a una distribuci&#xf3;n de Windows o Linux, saltar&#xe1;&#xa;un mensaje indicando &quot;Sistema operativo incompatible&quot; que pondr&#xe1; fin a la prueba del c&#xf3;digo."/>
           </Properties>
         </Component>
       </SubComponents>
@@ -103,7 +103,7 @@
               <Font name="Arial" size="13" style="0"/>
             </Property>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="En este caso no hace falta notificar al usario que ha seleccionado su archivo .java, as&#xed; que, solo saltar&#xe1; una notificaci&#xf3;n cuando le haya&#xa;dado al bot&#xf3;n de enviar y no haya seleccionado nada. El mensaje de error es el siguiente: &quot;Aun no has seleccionado ningun archivo&quot;.&#xa;Este mensaje impide continuar hasta que no se seleccione un archivo con extensi&#xf3;n .java."/>
+            <Property name="text" type="java.lang.String" value="En este caso no hace falta notificar al usuario que ha seleccionado su archivo .java, as&#xed; que, solo saltar&#xe1; una notificaci&#xf3;n cuando le haya&#xa;dado al bot&#xf3;n de enviar y no haya seleccionado nada. El mensaje de error es el siguiente: &quot;Aun no has seleccionado ningun archivo&quot;.&#xa;Este mensaje impide continuar hasta que no se seleccione un archivo con extensi&#xf3;n .java."/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
@@ -135,7 +135,7 @@
               <Font name="Arial" size="13" style="0"/>
             </Property>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="El programa tiene una serie de salidas por pantalla determinadas en funci&#xf3;n del valor que arroje el corrector tras realizar una prueba.&#xa;Principalmente, estas se pueden agrupar en funci&#xf3;n de 4 momentos concretos durante la correci&#xf3;n: selecci&#xf3;n del archivo,&#xa;selecci&#xf3;n del sistema operativo, compilaci&#xf3;n del c&#xf3;digo y prueba del c&#xf3;digo."/>
+            <Property name="text" type="java.lang.String" value="El programa tiene una serie de salidas por pantalla determinadas en funci&#xf3;n del valor que arroje el corrector tras realizar una prueba.&#xa;Principalmente, estas se pueden agrupar en funci&#xf3;n de 4 momentos concretos durante la correci&#xf3;n: selecci&#xf3;n del archivo,&#xa;reconocimiento del sistema operativo, compilaci&#xf3;n del c&#xf3;digo y prueba del c&#xf3;digo."/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>

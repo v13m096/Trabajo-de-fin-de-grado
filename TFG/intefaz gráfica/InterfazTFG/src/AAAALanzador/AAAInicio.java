@@ -67,8 +67,8 @@ public class AAAInicio extends javax.swing.JFrame {
         getContentPane().add(jLabeletsiinf, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, -1, -1));
 
         jLabeltutor.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabeltutor.setText("TUTOR: CLARA BENAC EARLE");
-        getContentPane().add(jLabeltutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 480, -1, -1));
+        jLabeltutor.setText("DIRECTORA: CLARA BENAC EARLE");
+        getContentPane().add(jLabeltutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 470, -1, 30));
 
         jLabelGRADO.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         jLabelGRADO.setText("GRADO EN MATEMÁTICAS E INFORMÁTICA");

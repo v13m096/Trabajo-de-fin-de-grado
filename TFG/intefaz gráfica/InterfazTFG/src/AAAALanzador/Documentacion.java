@@ -63,7 +63,7 @@ public class Documentacion extends javax.swing.JFrame {
         jTextArea3.setColumns(20);
         jTextArea3.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jTextArea3.setRows(5);
-        jTextArea3.setText("El programa se ha diseñado para que funcione en más de un sistema operativo para facilitar su acceso a más personas. Los sistemas\noperativos compatibles 100%,  una vez tengan instalados las versiones de java necesarias, son: Ubuntu 16.04 y Windows 10. El problema\nreside en que la función que realiza las pruebas no es igual en ambos sistemas, de ahí que el usuario deba elegir un sistema operativo antes\nde poder comprobar si su código es correcto. Si el usuario no ha seleccionado ninguno, saltará el siguiente mensaje: \"Aun no has seleccionado \nningun sistema operativo\".\nEste mensaje impide continuar hasta que no se seleccione un sistema operativo.");
+        jTextArea3.setText("El programa se ha diseñado para que funcione en más de un sistema operativo para facilitar su acceso a más personas. Los sistemas\noperativos compatibles 100%,  una vez tengan instalados las versiones de java necesarias, son: Ubuntu 16.04 y Windows 10. El problema\nreside en que la función que realiza las pruebas no es igual en ambos sistemas. La detección del sistema operativo se realiza con una\nprueba muy sencilla que precisa del paso anterior. Si el sistema operativo no corresponde a una distribución de Windows o Linux, saltará\nun mensaje indicando \"Sistema operativo incompatible\" que pondrá fin a la prueba del código.");
         jScrollPane3.setViewportView(jTextArea3);
 
         getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 970, 130));
@@ -71,7 +71,7 @@ public class Documentacion extends javax.swing.JFrame {
         jTextArea2.setColumns(20);
         jTextArea2.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jTextArea2.setRows(5);
-        jTextArea2.setText("En este caso no hace falta notificar al usario que ha seleccionado su archivo .java, así que, solo saltará una notificación cuando le haya\ndado al botón de enviar y no haya seleccionado nada. El mensaje de error es el siguiente: \"Aun no has seleccionado ningun archivo\".\nEste mensaje impide continuar hasta que no se seleccione un archivo con extensión .java.");
+        jTextArea2.setText("En este caso no hace falta notificar al usuario que ha seleccionado su archivo .java, así que, solo saltará una notificación cuando le haya\ndado al botón de enviar y no haya seleccionado nada. El mensaje de error es el siguiente: \"Aun no has seleccionado ningun archivo\".\nEste mensaje impide continuar hasta que no se seleccione un archivo con extensión .java.");
         jTextArea2.setBorder(null);
         jScrollPane2.setViewportView(jTextArea2);
         jTextArea2.getAccessibleContext().setAccessibleParent(jTextArea2);
@@ -81,7 +81,7 @@ public class Documentacion extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("El programa tiene una serie de salidas por pantalla determinadas en función del valor que arroje el corrector tras realizar una prueba.\nPrincipalmente, estas se pueden agrupar en función de 4 momentos concretos durante la correción: selección del archivo,\nselección del sistema operativo, compilación del código y prueba del código.");
+        jTextArea1.setText("El programa tiene una serie de salidas por pantalla determinadas en función del valor que arroje el corrector tras realizar una prueba.\nPrincipalmente, estas se pueden agrupar en función de 4 momentos concretos durante la correción: selección del archivo,\nreconocimiento del sistema operativo, compilación del código y prueba del código.");
         jTextArea1.setBorder(null);
         jScrollPane1.setViewportView(jTextArea1);
         jTextArea1.getAccessibleContext().setAccessibleParent(jTextArea1);

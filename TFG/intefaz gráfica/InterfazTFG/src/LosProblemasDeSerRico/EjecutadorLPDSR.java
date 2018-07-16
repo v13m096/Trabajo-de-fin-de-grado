@@ -6,7 +6,29 @@ import java.util.concurrent.TimeUnit;
 public class EjecutadorLPDSR {
 		public static String finresult = "";
                 
-                
+        public static String SistemaOperativo(String rutacompleta) {
+		String resultado="";
+
+		int longitud=rutacompleta.length()-1;
+		
+		while((int)rutacompleta.charAt(longitud)!=92&&longitud>=0){
+			longitud--;}
+                if(longitud>0){
+                    resultado="windows";
+                }
+                else{
+                    longitud=rutacompleta.length()-1;
+		
+                    while((int)rutacompleta.charAt(longitud)!=47&&longitud>=0){
+			longitud--;}
+                if(longitud>0){
+                    resultado="ubuntu";
+                }
+                else{
+                    resultado="Sistema operativo incompatible";}
+                }
+		return resultado;
+	}        
 	public static String[] DirectorioyNombredelprogramaWindows(String rutacompleta) {
 		String[] resultado=new String[2];
 
@@ -80,7 +102,7 @@ public class EjecutadorLPDSR {
 
 
 
-	public static String runFileWindows(String ruta,String[] prueba,int casos,int timeout)
+	public static String runFileWindows(String ruta,String[] prueba,int timeout)
 	{
 		String[] pathandnameclass=DirectorioyNombredelprogramaWindows(ruta);
 		String resultado="";
@@ -125,7 +147,7 @@ public class EjecutadorLPDSR {
 				{
 
 					contador++;
-					if (contador>4&&contador<5+casos){
+					if (contador>4&&contador<5+(prueba.length-1)){
 						resultado=resultado+outputRun+" ";}
 
 					//}
@@ -141,7 +163,7 @@ public class EjecutadorLPDSR {
 
 
 			else {
-				resultado="Bucle";
+				resultado="Bucle infinito";
 				try {   
                                         processRun.destroy();
 				}
@@ -234,7 +256,7 @@ public class EjecutadorLPDSR {
 
 
 			else {
-				resultado="Bucle";
+				resultado="Bucle infinito";
 				processRun.destroyForcibly();
 			}
 

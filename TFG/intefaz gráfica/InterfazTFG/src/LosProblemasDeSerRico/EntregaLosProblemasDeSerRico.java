@@ -5,10 +5,8 @@
  */
 package LosProblemasDeSerRico;
 
-import LaTiendaDeLaEsquina.*;
-import LlenandoPiscinas.*;
+
 import AAAALanzador.Documentacion;
-import CodigosDeBarras.*;
 import AAAALanzador.Problemas;
 import static LosProblemasDeSerRico.EntregaLosProblemasDeSerRico.filename;
 import java.io.File;
@@ -41,9 +39,6 @@ public class EntregaLosProblemasDeSerRico extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabelAutores = new javax.swing.JLabel();
-        jCheckBoxWindows = new javax.swing.JCheckBox();
-        jCheckBoxUbuntu = new javax.swing.JCheckBox();
-        jLabelSO = new javax.swing.JLabel();
         jButtonDOCUMENTACION = new javax.swing.JButton();
         jButtonREALIZARENTREGA = new javax.swing.JButton();
         jButtonPATH = new javax.swing.JButton();
@@ -70,28 +65,6 @@ public class EntregaLosProblemasDeSerRico extends javax.swing.JFrame {
         jLabelAutores.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabelAutores.setText("Seleccione su codigo");
         getContentPane().add(jLabelAutores, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
-
-        jCheckBoxWindows.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jCheckBoxWindows.setText("Windows 10");
-        jCheckBoxWindows.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxWindowsActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jCheckBoxWindows, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 150, 160, -1));
-
-        jCheckBoxUbuntu.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jCheckBoxUbuntu.setText("Ubuntu");
-        jCheckBoxUbuntu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxUbuntuActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jCheckBoxUbuntu, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 150, 130, -1));
-
-        jLabelSO.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabelSO.setText("Seleccione su sistema operativo");
-        getContentPane().add(jLabelSO, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 500, 30));
 
         jButtonDOCUMENTACION.setBackground(new java.awt.Color(204, 204, 204));
         jButtonDOCUMENTACION.setForeground(new java.awt.Color(0, 153, 153));
@@ -172,7 +145,7 @@ public class EntregaLosProblemasDeSerRico extends javax.swing.JFrame {
         getContentPane().add(jButtonENVIAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, 130, 40));
 
         jLabelTIEMPO.setBackground(new java.awt.Color(0, 153, 153));
-        jLabelTIEMPO.setText("Tiempo máximo: 8,000 s                             Memoria máxima: 4096 KiB");
+        jLabelTIEMPO.setText("Tiempo máximo: 8,000 s                            ");
         getContentPane().add(jLabelTIEMPO, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 80, 450, -1));
 
         jLabelNOMBRE_EJERCICIO.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -244,7 +217,7 @@ public class EntregaLosProblemasDeSerRico extends javax.swing.JFrame {
         String esperado3="257500 505000 752500 1900500 1100500 50005000 ";
         //Variables cuarta prueba
         String[] prueba4= {"2","5 9999 666","400 10000 2","400 10000 2"};
-        String esperadoW4="43335 3840400 ";
+        String esperadoW4="43335 3840400  ";
         String esperadoU4="43335 3840400 ";
         //String esperado2="SI EEUU SI Bulgaria SI Inglaterra SI Irlanda SI Portugal SI Noruega SI Venezuela SI Cuba SI India cipote";
         
@@ -252,7 +225,8 @@ public class EntregaLosProblemasDeSerRico extends javax.swing.JFrame {
        
     // PRIMERO COMPROBAMOS QUE EL ALUMNO HAYA SELECCIONADO SU CODIGO    
         if(filename!=null){
-            if(windows){
+            String so=EjecutadorLPDSR.SistemaOperativo(filename);
+            if("windows".equals(so)){
             
             jTextAreaRESULTADO.setText(null);
     // INSTANCIAMOS UN OBJETO DE LA CLASE EJECUTADOR PARA PODER TENER ACCESO A LOS METODOS QUE NECESITAREMOS PARA LAS REALIZAR LAS PRUEBAS        
@@ -268,22 +242,22 @@ public class EntregaLosProblemasDeSerRico extends javax.swing.JFrame {
                 String resultadoprueba="";
     //PRIMERA PRUEBA
                 jTextAreaRESULTADO.append("----PRUEBA CON EL CASO DESCRITO EN EL ENUNCIADO---"+"\n");
-                resultadoprueba=RobotWindows(filename,prueba1,3,esperado1,8000);
+                resultadoprueba=RobotWindows(filename,prueba1,esperado1,8000);
     //SI SUPERA LA PRUEBA, SEGUIMOS REALIZANDO PRUEBAS. EN CASO CONTRARIO NO HACE FALTA SEGUIR, EL CODIGO DEL ALUMNO YA ESTA MAL.          
                 if(resultadoprueba.equals("Correcto")){
     
     //SEGUNDA PRUEBA
                     
                     jTextAreaRESULTADO.append("----PRUEBA CON CAPACIDADES PROXIMAS O IGUALES AL LIMITE---"+"\n");
-                    resultadoprueba=RobotWindows(filename,prueba2,2,esperado2,8000);
+                    resultadoprueba=RobotWindows(filename,prueba2,esperado2,8000);
                     if(resultadoprueba.equals("Correcto")){
     //TERCERA PRUEBA
                         jTextAreaRESULTADO.append("----PRUEBA PESADA CON MULTIPLES CASOS DE PRUEBA---"+"\n");
-                        resultadoprueba=RobotWindows(filename,prueba3,6,esperado3,8000);
+                        resultadoprueba=RobotWindows(filename,prueba3,esperado3,8000);
                         if(resultadoprueba.equals("Correcto")){
     //CUARTA PRUEBA                        
                           jTextAreaRESULTADO.append("----PRUEBA DE TERMINACION CUANDO DICTA EL PROBLEMA---"+"\n");
-                          resultadoprueba=RobotWindows(filename,prueba4,2,esperadoW4,8000);
+                          resultadoprueba=RobotWindows(filename,prueba4,esperadoW4,8000);
                           if(resultadoprueba.equals("Correcto")){
                                 jTextAreaRESULTADO.append("----VEREDICTO FINAL----"+"\n");
                                     jTextAreaRESULTADO.append("Enhorabuena, tu codigo es correcto"+"\n"+"\n");
@@ -296,11 +270,11 @@ public class EntregaLosProblemasDeSerRico extends javax.swing.JFrame {
             
         
             }
-            else if(ubuntu){
+            else if("ubuntu".equals(so)){
             
             jTextAreaRESULTADO.setText(null);
     // INSTANCIAMOS UN OBJETO DE LA CLASE EJECUTADOR PARA PODER TENER ACCESO A LOS METODOS QUE NECESITAREMOS PARA LAS REALIZAR LAS PRUEBAS        
-            EjecutadorLB objeto= new EjecutadorLB();
+            EjecutadorLPDSR objeto= new EjecutadorLPDSR();
     // COMPROBAMOS QUE EL CODIGO DEL ALUMNO PUEDA COMPILARSE CORRECTAMENTE        
             
             String compilacion=objeto.compilador(filename);
@@ -343,7 +317,7 @@ public class EntregaLosProblemasDeSerRico extends javax.swing.JFrame {
             }
             else{
                 jTextAreaRESULTADO.append("----VEREDICTO FINAL----"+"\n");    
-                jTextAreaRESULTADO.append("Aun no has seleccionado ningun sistema operativo"+"\n"+"\n");
+                jTextAreaRESULTADO.append("Sistema operativo incompatible"+"\n"+"\n");
             }
             
             }
@@ -353,27 +327,17 @@ public class EntregaLosProblemasDeSerRico extends javax.swing.JFrame {
         jTextAreaRESULTADO.append("Aun no has seleccionado ningun archivo"+"\n"+"\n");}
     }//GEN-LAST:event_jButtonREALIZARENTREGAActionPerformed
 
-    private void jCheckBoxUbuntuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxUbuntuActionPerformed
-        // TODO add your handling code here:
-        ubuntu=true;
-    }//GEN-LAST:event_jCheckBoxUbuntuActionPerformed
-
-    private void jCheckBoxWindowsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxWindowsActionPerformed
-        // TODO add your handling code here:
-        windows=true;
-    }//GEN-LAST:event_jCheckBoxWindowsActionPerformed
-
     private void jButtonDOCUMENTACIONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDOCUMENTACIONActionPerformed
         // TODO add your handling code here:
         Documentacion a= new Documentacion();
         a.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonDOCUMENTACIONActionPerformed
-    private String RobotWindows(String ruta,String[] prueba,int casos,String esperado, int time){
+    private String RobotWindows(String ruta,String[] prueba,String esperado, int time){
         String resultado="error";
         String resultadoprueba="";
         EjecutadorLPDSR objeto= new EjecutadorLPDSR();
-        resultadoprueba=objeto.runFileWindows(ruta,prueba,casos,time);
+        resultadoprueba=objeto.runFileWindows(ruta,prueba,time);
                 
                 if(resultadoprueba.equals(esperado)){  
                   jTextAreaRESULTADO.append("Correcto"+"\n"+"\n");
@@ -387,9 +351,9 @@ public class EntregaLosProblemasDeSerRico extends javax.swing.JFrame {
                     jTextAreaRESULTADO.append("Tu codigo no es correcto"+"\n"+"\n");
                     
                 }
-                else if (resultadoprueba.equals("Bucle")){
+                else if (resultadoprueba.equals("Bucle infinito")){
                     objeto.matarHijosWindows();
-                    jTextAreaRESULTADO.append("Bucle"+"\n"+"\n");
+                    jTextAreaRESULTADO.append("Bucle infinito"+"\n"+"\n");
                     jTextAreaRESULTADO.append("----VEREDICTO FINAL---"+"\n");
                     jTextAreaRESULTADO.append("Tu codigo no es correcto"+"\n"+"\n");
                     
@@ -406,7 +370,7 @@ public class EntregaLosProblemasDeSerRico extends javax.swing.JFrame {
     private String RobotUbuntu(String ruta,String[] prueba,String esperado, int time){
         String resultado="error";
         String resultadoprueba="";
-        EjecutadorLTDLE objeto= new EjecutadorLTDLE();
+        EjecutadorLPDSR objeto= new EjecutadorLPDSR();
         resultadoprueba=objeto.runFileUbuntu(ruta,prueba,time);
                 
                 if(resultadoprueba.equals(esperado)){  
@@ -421,9 +385,9 @@ public class EntregaLosProblemasDeSerRico extends javax.swing.JFrame {
                     jTextAreaRESULTADO.append("Tu codigo no es correcto"+"\n"+"\n");
                     
                 }
-                else if (resultadoprueba.equals("Bucle")){
+                else if (resultadoprueba.equals("Bucle infinito")){
                     
-                    jTextAreaRESULTADO.append("Bucle"+"\n"+"\n");
+                    jTextAreaRESULTADO.append("Bucle infinito"+"\n"+"\n");
                     jTextAreaRESULTADO.append("----VEREDICTO FINAL---"+"\n");
                     jTextAreaRESULTADO.append("Tu codigo no es correcto"+"\n"+"\n");
                     
@@ -1504,14 +1468,11 @@ public class EntregaLosProblemasDeSerRico extends javax.swing.JFrame {
     private javax.swing.JButton jButtonPATH;
     private javax.swing.JButton jButtonPROBLEMAS;
     private javax.swing.JButton jButtonREALIZARENTREGA;
-    private javax.swing.JCheckBox jCheckBoxUbuntu;
-    private javax.swing.JCheckBox jCheckBoxWindows;
     private javax.swing.JLabel jLabelAutores;
     private javax.swing.JLabel jLabelENCABEZADO;
     private javax.swing.JLabel jLabelFONDO;
     private javax.swing.JLabel jLabelFONDO_IZQ;
     private javax.swing.JLabel jLabelNOMBRE_EJERCICIO;
-    private javax.swing.JLabel jLabelSO;
     private javax.swing.JLabel jLabelTIEMPO;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextAreaRESULTADO;

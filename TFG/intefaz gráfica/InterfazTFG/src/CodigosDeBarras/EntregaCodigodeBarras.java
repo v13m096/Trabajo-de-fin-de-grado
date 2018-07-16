@@ -38,9 +38,6 @@ public class EntregaCodigodeBarras extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabelAutores = new javax.swing.JLabel();
-        jCheckBoxWindows = new javax.swing.JCheckBox();
-        jCheckBoxUbuntu = new javax.swing.JCheckBox();
-        jLabelSO = new javax.swing.JLabel();
         jButtonDOCUMENTACION = new javax.swing.JButton();
         jButtonREALIZARENTREGA = new javax.swing.JButton();
         jButtonPATH = new javax.swing.JButton();
@@ -67,28 +64,6 @@ public class EntregaCodigodeBarras extends javax.swing.JFrame {
         jLabelAutores.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabelAutores.setText("Seleccione su codigo");
         getContentPane().add(jLabelAutores, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
-
-        jCheckBoxWindows.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jCheckBoxWindows.setText("Windows 10");
-        jCheckBoxWindows.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxWindowsActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jCheckBoxWindows, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 150, 160, -1));
-
-        jCheckBoxUbuntu.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jCheckBoxUbuntu.setText("Ubuntu");
-        jCheckBoxUbuntu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxUbuntuActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jCheckBoxUbuntu, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, 130, -1));
-
-        jLabelSO.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabelSO.setText("Seleccione su sistema operativo");
-        getContentPane().add(jLabelSO, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 500, 30));
 
         jButtonDOCUMENTACION.setBackground(new java.awt.Color(204, 204, 204));
         jButtonDOCUMENTACION.setForeground(new java.awt.Color(0, 153, 153));
@@ -169,7 +144,7 @@ public class EntregaCodigodeBarras extends javax.swing.JFrame {
         getContentPane().add(jButtonENVIAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, 130, 40));
 
         jLabelTIEMPO.setBackground(new java.awt.Color(0, 153, 153));
-        jLabelTIEMPO.setText("Tiempo máximo: 1,000 s                             Memoria máxima: 4096 KiB");
+        jLabelTIEMPO.setText("Tiempo máximo: 1,000 s                          ");
         getContentPane().add(jLabelTIEMPO, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 660, -1));
 
         jLabelNOMBRE_EJERCICIO.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -252,7 +227,8 @@ public class EntregaCodigodeBarras extends javax.swing.JFrame {
        
     // PRIMERO COMPROBAMOS QUE EL ALUMNO HAYA SELECCIONADO SU CODIGO    
         if(filename!=null){
-            if(windows){
+            String so= EjecutadorCB.SistemaOperativo(filename);
+            if("windows".equals(so)){
             
             jTextAreaRESULTADO.setText(null);
     // INSTANCIAMOS UN OBJETO DE LA CLASE EJECUTADOR PARA PODER TENER ACCESO A LOS METODOS QUE NECESITAREMOS PARA LAS REALIZAR LAS PRUEBAS        
@@ -299,7 +275,7 @@ public class EntregaCodigodeBarras extends javax.swing.JFrame {
             
         
             }
-            else if(ubuntu){
+            else if("ubuntu".equals(so)){
             
             jTextAreaRESULTADO.setText(null);
     // INSTANCIAMOS UN OBJETO DE LA CLASE EJECUTADOR PARA PODER TENER ACCESO A LOS METODOS QUE NECESITAREMOS PARA LAS REALIZAR LAS PRUEBAS        
@@ -348,7 +324,7 @@ public class EntregaCodigodeBarras extends javax.swing.JFrame {
             }
             else{
                 jTextAreaRESULTADO.append("----VEREDICTO FINAL----"+"\n");    
-                jTextAreaRESULTADO.append("Aun no has seleccionado ningun sistema operativo"+"\n"+"\n");
+                jTextAreaRESULTADO.append("Sistema operativo incompatible"+"\n"+"\n");
             }
             
             }
@@ -357,16 +333,6 @@ public class EntregaCodigodeBarras extends javax.swing.JFrame {
         jTextAreaRESULTADO.append("----VEREDICTO FINAL----"+"\n");    
         jTextAreaRESULTADO.append("Aun no has seleccionado ningun archivo"+"\n"+"\n");}
     }//GEN-LAST:event_jButtonREALIZARENTREGAActionPerformed
-
-    private void jCheckBoxUbuntuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxUbuntuActionPerformed
-        // TODO add your handling code here:
-        ubuntu=true;
-    }//GEN-LAST:event_jCheckBoxUbuntuActionPerformed
-
-    private void jCheckBoxWindowsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxWindowsActionPerformed
-        // TODO add your handling code here:
-        windows=true;
-    }//GEN-LAST:event_jCheckBoxWindowsActionPerformed
 
     private void jButtonDOCUMENTACIONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDOCUMENTACIONActionPerformed
         // TODO add your handling code here:
@@ -392,10 +358,10 @@ public class EntregaCodigodeBarras extends javax.swing.JFrame {
                     jTextAreaRESULTADO.append("Tu codigo no es correcto"+"\n"+"\n");
                     
                 }
-                else if (resultadoprueba.equals("Bucle")){
+                else if (resultadoprueba.equals("Bucle infinito")){
                     objeto.matarHijosWindows();
                     
-                    jTextAreaRESULTADO.append("Bucle"+"\n"+"\n");
+                    jTextAreaRESULTADO.append("Bucle infinito"+"\n"+"\n");
                     jTextAreaRESULTADO.append("----VEREDICTO FINAL---"+"\n");
                     jTextAreaRESULTADO.append("Tu codigo no es correcto"+"\n"+"\n");
                     
@@ -427,9 +393,9 @@ public class EntregaCodigodeBarras extends javax.swing.JFrame {
                     jTextAreaRESULTADO.append("Tu codigo no es correcto"+"\n"+"\n");
                     
                 }
-                else if (resultadoprueba.equals("Bucle")){
+                else if (resultadoprueba.equals("Bucle infinito")){
                     
-                    jTextAreaRESULTADO.append("Bucle"+"\n"+"\n");
+                    jTextAreaRESULTADO.append("Bucle infinito"+"\n"+"\n");
                     jTextAreaRESULTADO.append("----VEREDICTO FINAL---"+"\n");
                     jTextAreaRESULTADO.append("Tu codigo no es correcto"+"\n"+"\n");
                     
@@ -614,14 +580,11 @@ public class EntregaCodigodeBarras extends javax.swing.JFrame {
     private javax.swing.JButton jButtonPATH;
     private javax.swing.JButton jButtonPROBLEMAS;
     private javax.swing.JButton jButtonREALIZARENTREGA;
-    private javax.swing.JCheckBox jCheckBoxUbuntu;
-    private javax.swing.JCheckBox jCheckBoxWindows;
     private javax.swing.JLabel jLabelAutores;
     private javax.swing.JLabel jLabelENCABEZADO;
     private javax.swing.JLabel jLabelFONDO;
     private javax.swing.JLabel jLabelFONDO_IZQ;
     private javax.swing.JLabel jLabelNOMBRE_EJERCICIO;
-    private javax.swing.JLabel jLabelSO;
     private javax.swing.JLabel jLabelTIEMPO;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextAreaRESULTADO;
